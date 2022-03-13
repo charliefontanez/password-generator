@@ -1,6 +1,11 @@
 # Random Password Generator
 
 
+## Description
+
+
+A random password generator using javascript. 
+
 
 ## Links
 
