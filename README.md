@@ -7,7 +7,7 @@
 (https://charliefontanez.github.io/password-generator/)
 
 
-[!image](./password-generator.png)
+![image](./password-generator.png)
 
 
 
