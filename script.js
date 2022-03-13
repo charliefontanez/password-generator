@@ -9,7 +9,7 @@ const numbers = "0123456789";
 const symbols = "!@#$%^&*()";
 
 
-var characters = "";
+
 
 function generatePassword() {
   var results = "";
@@ -22,6 +22,7 @@ function generatePassword() {
     var numeric  = window.confirm("Include numbers?");
     var specialCharacters = window.confirm("Special Characters?");
   
+    var characters = "";
 
     if (upperCase) {
       characters += alphabetUpper;
@@ -36,11 +37,11 @@ function generatePassword() {
       characters += symbols;
     }
 
+    console.log(characters);
+
 
     for (let i = 0; i < charQty; i++) {
       results += characters[Math.floor(Math.random() * characters.length)];
-
-      // results += characters.charAt(Math.floor(Math.random() * characters.length));
     }
 
 
