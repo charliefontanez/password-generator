@@ -4,7 +4,7 @@
 
 ## Live Page
 
-(https://charliefontanez.github.io/password-generator/)
+https://charliefontanez.github.io/password-generator/
 
 
 ![image](./password-generator.png)
