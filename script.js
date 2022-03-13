@@ -8,6 +8,9 @@ const alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const symbols = "!@#$%^&*()";
 
+
+var characters = "";
+
 function generatePassword() {
   var results = "";
   var passWordSize = window.prompt("How long would you like your password to be?");
@@ -19,40 +22,65 @@ function generatePassword() {
     var numeric  = window.confirm("Include numbers?");
     var specialCharacters = window.confirm("Special Characters?");
   
-    var i = 0;
-    while (i < charQty) {
 
     if (upperCase) {
-      results += alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
-      i++;
-      if (i == charQty) {
-        break;
-      }
+      characters += alphabetUpper;
     }
     if (lowerCase) {
-      results += alphabetLower[Math.floor(Math.random() * alphabetLower.length)];
-      i++;
-      if (i == charQty) {
-        break;
-      }
+      characters += alphabetLower;
     }
     if (numeric) {
-      results += numbers[Math.floor(Math.random() * numbers.length)];
-      i++;
-      if (i == charQty) {
-        break;
-      }
+      characters += numbers;
     }
     if (specialCharacters) {
-      results += symbols[Math.floor(Math.random() * symbols.length)];
-      i++;
-      if (i == charQty) {
-        break;
-      }
+      characters += symbols;
     }
 
 
-  }
+    for (let i = 0; i < charQty; i++) {
+      results += characters[Math.floor(Math.random() * characters.length)];
+
+      // results += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
+
+
+
+
+    // var i = 0;
+    // while (i < charQty) {
+
+    // if (upperCase) {
+    //   results += alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
+    //   i++;
+    //   if (i == charQty) {
+    //     break;
+    //   }
+    // }
+    // if (lowerCase) {
+    //   results += alphabetLower[Math.floor(Math.random() * alphabetLower.length)];
+    //   i++;
+    //   if (i == charQty) {
+    //     break;
+    //   }
+    // }
+    // if (numeric) {
+    //   results += numbers[Math.floor(Math.random() * numbers.length)];
+    //   i++;
+    //   if (i == charQty) {
+    //     break;
+    //   }
+    // }
+    // if (specialCharacters) {
+    //   results += symbols[Math.floor(Math.random() * symbols.length)];
+    //   i++;
+    //   if (i == charQty) {
+    //     break;
+    //   }
+    // }
+
+
+  
     // var i = 0;
     // while (i < charQty) {
       
