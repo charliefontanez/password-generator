@@ -24,8 +24,3 @@ https://github.com/charliefontanez/password-generator/tree/main
 - CSS
 
 - Javascript
-
-
-
-
-

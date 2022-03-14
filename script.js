@@ -8,107 +8,68 @@ const alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const symbols = "!@#$%^&*()";
 
-
+// test commit
 
 
 function generatePassword() {
   var results = "";
-  var passWordSize = window.prompt("How long would you like your password to be?");
-  var charQty = parseInt(passWordSize);
+  let validSize = false;
 
-  if (charQty > 7 && charQty < 129) {
-    var upperCase = window.confirm("Would you like to include upper case letters?");
-    var lowerCase = window.confirm("How about lower case?");
-    var numeric  = window.confirm("Include numbers?");
-    var specialCharacters = window.confirm("Special Characters?");
-  
-    var characters = "";
-
-    if (upperCase) {
-      characters += alphabetUpper;
+  while (validSize == false) {
+    var passWordSize = window.prompt("How long would you like your password to be?");
+    
+    if (passWordSize == "" || passWordSize == null) {
+      return null;
     }
-    if (lowerCase) {
-      characters += alphabetLower;
-    }
-    if (numeric) {
-      characters += numbers;
-    }
-    if (specialCharacters) {
-      characters += symbols;
-    }
+    else {
+      var charQty = parseInt(passWordSize);
 
-    console.log(characters);
-
-
-    for (let i = 0; i < charQty; i++) {
-      results += characters[Math.floor(Math.random() * characters.length)];
-    }
-
-
-
-
-
-    // var i = 0;
-    // while (i < charQty) {
-
-    // if (upperCase) {
-    //   results += alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
-    //   i++;
-    //   if (i == charQty) {
-    //     break;
-    //   }
-    // }
-    // if (lowerCase) {
-    //   results += alphabetLower[Math.floor(Math.random() * alphabetLower.length)];
-    //   i++;
-    //   if (i == charQty) {
-    //     break;
-    //   }
-    // }
-    // if (numeric) {
-    //   results += numbers[Math.floor(Math.random() * numbers.length)];
-    //   i++;
-    //   if (i == charQty) {
-    //     break;
-    //   }
-    // }
-    // if (specialCharacters) {
-    //   results += symbols[Math.floor(Math.random() * symbols.length)];
-    //   i++;
-    //   if (i == charQty) {
-    //     break;
-    //   }
-    // }
-
-
-  
-    // var i = 0;
-    // while (i < charQty) {
+      if (charQty > 7 && charQty < 129) {
+        validSize = true;
+        var upperCase = window.confirm("Would you like to include upper case letters?");
+        var lowerCase = window.confirm("How about lower case?");
+        var numeric  = window.confirm("Include numbers?");
+        var specialCharacters = window.confirm("Special Characters?");
       
-    //   if (upperCase == true) {
-    //     results += alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
-    //     i++;
-    //   }
-    //   if (lowerCase == true) {
-    //     results += alphabetLower[Math.floor(Math.random() * alphabetLower.length)];
-    //     i++;
-    //   }
-    //   if (numeric == true) {
-    //     results += numbers[Math.floor(Math.random() * numbers.length)];
-    //     i++;
-    //   }
-    //   if (specialCharacters == true) {
-    //     results += symbols[Math.floor(Math.random() * symbols.length)];
-    //     i++;
-    //   }
-    // }
-    console.log(results);
-  } 
-  else {
-    window.alert("That is an invalid entry. Select a length between 8 and 128");
-    return generatePassword();
+        var characters = "";
+
+        if (upperCase) {
+          characters += alphabetUpper;
+        }
+        if (lowerCase) {
+          characters += alphabetLower;
+        }
+        if (numeric) {
+          characters += numbers;
+        }
+        if (specialCharacters) {
+          characters += symbols;
+        }
+
+
+        console.log(characters);
+
+
+        if (characters == "") {
+          results = null;
+        }
+        else {
+          for (i = 0; i < charQty; i++) {
+            results += characters[Math.floor(Math.random() * characters.length)];
+          }
+        }
+
+        console.log(results);
+
+      } 
+      else {
+        window.alert("That is an invalid entry. Select a length between 8 and 128");
+      }
+    }
   }
+
   return results;
+
 }
 
 function writePassword() {
